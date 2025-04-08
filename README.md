@@ -1,4 +1,3 @@
-````markdown
 # MacOS Setup Scripts
 
 Bộ script này giúp tự động hóa quá trình cài đặt và cấu hình môi trường phát triển trên macOS, đặc biệt cho Apple Silicon Macs.
@@ -34,7 +33,6 @@ Cách sử dụng:
 chmod +x setup-terminal.sh
 ./setup-terminal.sh
 ```
-````
 
 3. Sau khi script hoàn tất, khởi động lại Terminal hoặc mở một Terminal mới.
 
