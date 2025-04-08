@@ -54,6 +54,7 @@ install_app jetbrains-toolbox
 install_app dbeaver-community
 install_app mongodb-compass
 install_app another-redis-desktop-manager
+install_app playcover-community
 
 echo "Đang cài đặt Docker..."
 brew install docker
