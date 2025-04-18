@@ -70,11 +70,32 @@ echo "Protocol Buffers đã được cài đặt."
 echo "Phiên bản Protocol Buffers:"
 protoc --version
 
+# Cài đặt pnpm
+echo "Đang cài đặt pnpm..."
+brew install pnpm
+echo "pnpm đã được cài đặt."
+
+# Cài đặt bun
+echo "Đang cài đặt bun..."
+curl -fsSL https://bun.sh/install | bash
+echo "bun đã được cài đặt."
+
+# Cài đặt NestJS CLI
+echo "Đang cài đặt NestJS CLI..."
+npm install -g @nestjs/cli
+echo "NestJS CLI đã được cài đặt."
+
 # Kiểm tra phiên bản
 echo "Phiên bản Node.js:"
 node --version
 echo "Phiên bản npm:"
 npm --version
+echo "Phiên bản pnpm:"
+pnpm --version
+echo "Phiên bản bun:"
+bun --version
+echo "Phiên bản NestJS CLI:"
+nest --version
 
 echo "Cài đặt hoàn tất!"
 echo "Vui lòng khởi động lại terminal hoặc chạy 'source ~/.zshrc' để áp dụng các thay đổi."
