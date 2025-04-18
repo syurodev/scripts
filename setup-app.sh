@@ -55,10 +55,20 @@ install_app dbeaver-community
 install_app mongodb-compass
 install_app another-redis-desktop-manager
 install_app playcover-community
+install_app visual-studio-code
 
 echo "Đang cài đặt Docker..."
 brew install docker
 echo "Docker đã được cài đặt."
+
+# Cài đặt Protocol Buffers
+echo "Đang cài đặt Protocol Buffers..."
+brew install protobuf
+echo "Protocol Buffers đã được cài đặt."
+
+# Kiểm tra phiên bản protoc
+echo "Phiên bản Protocol Buffers:"
+protoc --version
 
 # Kiểm tra phiên bản
 echo "Phiên bản Node.js:"
