@@ -14,9 +14,9 @@ echo "NVM đã được cài đặt."
 
 # Thiết lập NVM
 mkdir -p ~/.nvm
-echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
-echo '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"' >> ~/.zshrc
-echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"' >> ~/.zshrc
+echo 'export NVM_DIR="$HOME/.nvm"' >>~/.zshrc
+echo '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"' >>~/.zshrc
+echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"' >>~/.zshrc
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
@@ -31,26 +31,20 @@ echo "Node.js 20 đã được cài đặt."
 # Cài đặt các ứng dụng bổ sung
 echo "Cài đặt các ứng dụng bổ sung..."
 
+install_app thebrowsercompany-dia
 install_app trae
-install_app cursor
 install_app font-jetbrains-mono
 install_app postman
 install_app spotify
-install_app arc
 install_app discord
 install_app zalo
 install_app alcove
 install_app aldente
-install_app github-copilot-for-xcode
 install_app steam
 install_app sourcetree
 install_app github
 install_app termius
-install_app datagrip
-install_app webstorm
-install_app intellij-idea
 install_app font-jetbrains-mono-nerd-font
-install_app jetbrains-toolbox
 install_app dbeaver-community
 install_app mongodb-compass
 install_app another-redis-desktop-manager
@@ -75,6 +69,11 @@ echo "Đang cài đặt pnpm..."
 brew install pnpm
 echo "pnpm đã được cài đặt."
 
+# Cài đặt maven
+echo "Đang cài đặt maven..."
+brew install maven
+echo "maven đã được cài đặt."
+
 # Cài đặt bun
 echo "Đang cài đặt bun..."
 curl -fsSL https://bun.sh/install | bash
@@ -96,6 +95,8 @@ echo "Phiên bản bun:"
 bun --version
 echo "Phiên bản NestJS CLI:"
 nest --version
+echo "Phiên bản maven:"
+mvn -version
 
 echo "Cài đặt hoàn tất!"
 echo "Vui lòng khởi động lại terminal hoặc chạy 'source ~/.zshrc' để áp dụng các thay đổi."

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Kiểm tra và cài đặt Homebrew
-if ! command -v brew &> /dev/null
+if ! command -v brew &>/dev/null
 then
     echo "Cài đặt Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     echo "Homebrew đã được cài đặt."
@@ -32,7 +32,16 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo "Oh My Zsh đã được cài đặt."
 else
-    echo "Oh My Zsh đã được cài đặt."
+    echo "Oh My Zsh đã được cài đặt."s
 fi
 
-echo "Phần 1 đã hoàn tất. Vui lòng khởi động lại terminal và chạy etup-app.sh
+# Alias để thiết lập local git config
+if ! grep -q "alias set-git-config=" ~/.zshrc; then
+    echo "alias set-git-config='git config user.name \"vupt\" && git config user.email \"vupt@overate-vntech.com\"'" >>~/.zshrc
+fi
+
+if ! grep -q "alias set-git-config=" ~/.bashrc; then
+    echo "alias set-git-config='git config user.name \"vupt\" && git config user.email \"vupt@overate-vntech.com\"'" >>~/.bashrc
+fi
+
+echo "Phần 1 đã hoàn tất. Vui lòng khởi động lại terminal và chạy setup-app.sh"
