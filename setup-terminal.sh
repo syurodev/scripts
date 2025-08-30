@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Kiểm tra và cài đặt Homebrew
-if ! command -v brew &>/dev/null
-then
-    echo "Cài đặt Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    echo "Homebrew đã được cài đặt."
-fi
-
 # Cài đặt Zsh thông qua Homebrew
 echo "Cài đặt Zsh..."
 brew install zsh
@@ -33,6 +22,17 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Oh My Zsh đã được cài đặt."
 else
     echo "Oh My Zsh đã được cài đặt."s
+fi
+
+# Kiểm tra và cài đặt Homebrew
+if ! command -v brew &>/dev/null
+then
+    echo "Cài đặt Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    echo "Homebrew đã được cài đặt."
 fi
 
 # Alias để thiết lập local git config

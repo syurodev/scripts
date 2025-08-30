@@ -1,83 +1,178 @@
 # MacOS Setup Scripts
 
-Bộ script này giúp tự động hóa quá trình cài đặt và cấu hình môi trường phát triển trên macOS, đặc biệt cho Apple Silicon Macs.
+Bộ script này giúp tự động hóa quá trình cài đặt và cấu hình môi trường phát triển trên macOS. Hỗ trợ cả **Homebrew** và **Nix** package managers.
 
-## Nội dung
+## 📋 Nội dung
 
-1. [setup-terminal.sh](#setup-terminalsh)
-2. [setup-app.sh](#setup-appsh)
+### Scripts sử dụng Homebrew
+1. [setup-terminal.sh](#setup-terminalsh) - Thiết lập terminal với Homebrew
+2. [setup-app.sh](#setup-appsh) - Cài đặt ứng dụng với Homebrew
 
-## Yêu cầu
+### Scripts sử dụng Nix
+3. [setup-nix.sh](#setup-nixsh) - Cài đặt Nix package manager
+4. [setup-terminal-nix.sh](#setup-terminal-nixsh) - Thiết lập terminal với Nix
+5. [setup-apps-nix.sh](#setup-apps-nixsh) - Cài đặt ứng dụng với Nix
 
-- macOS chạy trên Apple Silicon (M1, M2, v.v.)
+## 🎯 Yêu cầu
+
+- macOS (hỗ trợ cả Intel và Apple Silicon)
 - Quyền admin trên máy
+- Kết nối internet
 
-## Hướng dẫn sử dụng
+## 🚀 Hướng dẫn sử dụng
 
-### setup-terminal.sh
+### Tùy chọn 1: Sử dụng Homebrew (Traditional)
+
+#### setup-terminal.sh
 
 Script này cài đặt và cấu hình các công cụ cơ bản cho terminal.
 
-Bao gồm:
-
+**Bao gồm:**
 - Homebrew
 - Zsh
 - Oh My Zsh
+- Git aliases
 
-Cách sử dụng:
-
-1. Mở Terminal
-2. Chạy các lệnh sau:
+**Cách sử dụng:**
 
 ```bash
 chmod +x setup-terminal.sh
 ./setup-terminal.sh
+# Khởi động lại terminal sau khi hoàn tất
 ```
 
-3. Sau khi script hoàn tất, khởi động lại Terminal hoặc mở một Terminal mới.
+#### setup-app.sh
 
-### setup-app.sh
+Script này cài đặt các ứng dụng và công cụ phát triển.
 
-Script này cài đặt các ứng dụng và công cụ phát triển phổ biến.
+**Bao gồm:**
+- NVM & Node.js 20
+- Development tools (Maven, Protocol Buffers, pnpm, Bun)
+- GUI Applications (VS Code, Spotify, Discord, etc.)
+- CLI tools (NestJS CLI, Git tools)
 
-Bao gồm:
-
-- NVM (Node Version Manager)
-- Node.js 20
-- Nhiều ứng dụng hữu ích khác (xem danh sách trong script)
-
-Cách sử dụng:
-
-1. Đảm bảo bạn đã chạy `setup-terminal.sh` và khởi động lại Terminal
-2. Chạy các lệnh sau:
+**Cách sử dụng:**
 
 ```bash
 chmod +x setup-app.sh
 ./setup-app.sh
 ```
 
-## Lưu ý
+### Tùy chọn 2: Sử dụng Nix (Recommended)
 
-- Các script có thể yêu cầu nhập mật khẩu admin trong quá trình chạy.
-- Quá trình cài đặt có thể mất một thời gian tùy thuộc vào tốc độ internet và hiệu suất máy tính.
-- Một số ứng dụng có thể yêu cầu cấu hình thêm sau khi cài đặt.
-- Sau khi chạy cả hai script, nên khởi động lại máy tính để đảm bảo tất cả thay đổi được áp dụng.
+#### setup-nix.sh
 
-## Tùy chỉnh
+Script cài đặt Nix package manager - một hệ thống quản lý package hiện đại.
 
-Bạn có thể chỉnh sửa các script để thêm hoặc bớt các ứng dụng theo nhu cầu cá nhân.
+**Ưu điểm của Nix:**
+- ✅ Reproducible builds
+- ✅ Không xung đột dependencies  
+- ✅ Dễ dàng rollback
+- ✅ Cross-platform
+- ✅ Declarative configuration
 
-## Đóng góp
+**Cách sử dụng:**
 
-Nếu bạn có bất kỳ đề xuất cải tiến nào, vui lòng tạo issue hoặc pull request.
-
-## Giấy phép
-
-[MIT License](LICENSE)
-
+```bash
+chmod +x setup-nix.sh
+./setup-nix.sh
+# Khởi động lại terminal sau khi hoàn tất
 ```
 
-Bạn có thể sử dụng nội dung này cho file README.md trong repository Git của bạn. Nó cung cấp một tổng quan về các script, hướng dẫn sử dụng, và các thông tin quan trọng khác cho người dùng.
+#### setup-terminal-nix.sh
 
-Đừng quên tạo một file LICENSE nếu bạn muốn sử dụng giấy phép MIT hoặc bất kỳ giấy phép mã nguồn mở nào khác chodự án của mình.
+Thiết lập terminal environment với Nix.
+
+**Bao gồm:**
+- Zsh với Oh My Zsh
+- Modern CLI tools (exa, bat, ripgrep, fd, fzf)
+- Tmux configuration
+- Useful aliases và functions
+- Git configuration
+
+**Cách sử dụng:**
+
+```bash
+chmod +x setup-terminal-nix.sh
+./setup-terminal-nix.sh
 ```
+
+#### setup-apps-nix.sh
+
+Cài đặt development applications với Nix.
+
+**Bao gồm:**
+- NVM & Node.js
+- Development tools (Maven, Protocol Buffers, Git)
+- Terminal utilities (neovim, tmux, htop)
+- GUI applications (VS Code, Firefox, etc.)
+- Node.js packages (NestJS CLI, pnpm)
+
+**Cách sử dụng:**
+
+```bash
+chmod +x setup-apps-nix.sh
+./setup-apps-nix.sh
+```
+
+## 📌 Workflow khuyến nghị
+
+### Với Homebrew:
+```bash
+# Bước 1: Thiết lập terminal
+./setup-terminal.sh
+# Khởi động lại terminal
+
+# Bước 2: Cài đặt applications  
+./setup-app.sh
+```
+
+### Với Nix (Recommended):
+```bash
+# Bước 1: Cài đặt Nix
+./setup-nix.sh
+# Khởi động lại terminal
+
+# Bước 2: Thiết lập terminal environment
+./setup-terminal-nix.sh
+
+# Bước 3: Cài đặt applications
+./setup-apps-nix.sh
+```
+
+## ⚠️ Lưu ý quan trọng
+
+- **Quyền admin**: Scripts có thể yêu cầu nhập mật khẩu admin
+- **Thời gian**: Quá trình cài đặt có thể mất 15-30 phút tùy tốc độ internet
+- **Khởi động lại**: Luôn khởi động lại terminal sau mỗi script
+- **Kiểm tra**: Một số ứng dụng GUI có thể cần cấu hình thêm sau cài đặt
+- **Conflict**: Không nên mix Homebrew và Nix trong cùng một session
+
+## 🎨 Tùy chỉnh
+
+Bạn có thể chỉnh sửa các script để:
+- Thêm/bỏ các ứng dụng theo nhu cầu
+- Thay đổi cấu hình aliases và functions
+- Điều chỉnh theme và plugin cho Oh My Zsh
+
+## 🔄 So sánh Homebrew vs Nix
+
+| Tính năng | Homebrew | Nix |
+|-----------|----------|-----|
+| **Ease of use** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **Reproducibility** | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Package availability** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **System isolation** | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Cross-platform** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Learning curve** | ⭐⭐⭐⭐⭐ | ⭐⭐ |
+
+## 🤝 Đóng góp
+
+Contributions are welcome! Please:
+- Fork repository
+- Create feature branch
+- Submit pull request với mô tả chi tiết
+
+## 📄 License
+
+MIT License - xem chi tiết trong file cấu hình repository của bạn.

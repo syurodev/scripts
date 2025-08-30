@@ -32,7 +32,6 @@ echo "Node.js 20 đã được cài đặt."
 echo "Cài đặt các ứng dụng bổ sung..."
 
 install_app thebrowsercompany-dia
-install_app trae
 install_app font-jetbrains-mono
 install_app postman
 install_app spotify
@@ -50,10 +49,8 @@ install_app mongodb-compass
 install_app another-redis-desktop-manager
 install_app playcover-community
 install_app visual-studio-code
-
-echo "Đang cài đặt Docker..."
-brew install docker
-echo "Docker đã được cài đặt."
+install_app zed
+install_app yaak
 
 # Cài đặt Protocol Buffers
 echo "Đang cài đặt Protocol Buffers..."
