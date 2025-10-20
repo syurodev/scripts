@@ -7,6 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "restore_on_startup": "none",
+  "on_last_window_closed": "quit_app",
+  "agent": {
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-5"
+    },
+    "model_parameters": []
+  },
   "features": {
     // "edit_prediction_provider": "supermaven"
     // "edit_prediction_provider": "copilot"
@@ -36,7 +46,7 @@
   "theme": {
     "mode": "system",
     "light": "Xcode Spartan",
-    "dark": "Xcode Presentation Darker"
+    "dark": "Xcode Default Darker"
   },
   "experimental.theme_overrides": {
     "background.appearance": "blurred"
@@ -71,5 +81,34 @@
   "snippet_sort_order": "inline", // Snippets completions: top, inline, bottom, none
   "show_completions_on_input": true, // Show completions while typing
   "show_completion_documentation": true, // Show documentation in completions
-  "auto_signature_help": true // Show method signatures inside parentheses
+  // "auto_signature_help": true, // Show method signatures inside parentheses
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Disable basedpyright and enable Ty, and otherwise
+        // use the default configuration.
+        "ty",
+        "!basedpyright",
+        "..."
+      ]
+    }
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "inlayHints.callArgumentNames": false
+        }
+      }
+    }
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_branch_name": true
+  },
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true,
+    "source.removeUnusedImports": true
+  }
 }
