@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "mode": "eager"
+  },
   "restore_on_startup": "none",
   "on_last_window_closed": "quit_app",
   "agent": {
@@ -46,7 +49,7 @@
   "theme": {
     "mode": "system",
     "light": "Xcode Spartan",
-    "dark": "Xcode Default Darker"
+    "dark": "Lotus Dark"
   },
   "experimental.theme_overrides": {
     "background.appearance": "blurred"
@@ -91,6 +94,28 @@
         "!basedpyright",
         "..."
       ]
+    },
+    "JavaScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "TypeScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "TSX": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+
+        "source.organizeImports.biome": true
+      }
     }
   },
   "lsp": {
@@ -100,6 +125,12 @@
           "diagnosticMode": "workspace",
           "inlayHints.callArgumentNames": false
         }
+      }
+    },
+    "biome": {
+      "binary": {
+        "path": "/var/biome-2.2.3/bin/biome",
+        "arguments": ["lsp-proxy"]
       }
     }
   },

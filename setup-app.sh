@@ -22,11 +22,11 @@ echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homeb
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
-# Cài đặt Node.js 20
-echo "Cài đặt Node.js 20..."
-nvm install 20
-nvm use 20
-echo "Node.js 20 đã được cài đặt."
+# Cài đặt Node.js 22
+echo "Cài đặt Node.js 22..."
+nvm install 22
+nvm use 22
+echo "Node.js 22 đã được cài đặt."
 
 # Cài đặt các ứng dụng bổ sung
 echo "Cài đặt các ứng dụng bổ sung..."
@@ -39,18 +39,16 @@ install_app discord
 install_app zalo
 install_app alcove
 install_app aldente
-install_app steam
 install_app sourcetree
-install_app github
 install_app termius
 install_app font-jetbrains-mono-nerd-font
 install_app dbeaver-community
-install_app mongodb-compass
 install_app another-redis-desktop-manager
 install_app playcover-community
 install_app visual-studio-code
 install_app zed
 install_app yaak
+install_app openvpn-connect
 
 # Cài đặt Protocol Buffers
 echo "Đang cài đặt Protocol Buffers..."
@@ -61,15 +59,40 @@ echo "Protocol Buffers đã được cài đặt."
 echo "Phiên bản Protocol Buffers:"
 protoc --version
 
-# Cài đặt pnpm
-echo "Đang cài đặt pnpm..."
-brew install pnpm
-echo "pnpm đã được cài đặt."
+# Cài đặt Java 8 (Azul Zulu - native ARM64 cho Apple Silicon)
+echo "Đang cài đặt Java 8 (Azul Zulu)..."
+brew install --cask zulu@8
+echo "Java 8 đã được cài đặt."
+
+# Thiết lập Java 8 environment
+if ! grep -q "export JAVA_8_HOME=" ~/.zshrc; then
+    echo 'export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)' >>~/.zshrc
+    echo 'export JAVA_HOME=$JAVA_8_HOME' >>~/.zshrc
+fi
 
 # Cài đặt maven
 echo "Đang cài đặt maven..."
 brew install maven
 echo "maven đã được cài đặt."
+
+# Cài đặt Go
+echo "Đang cài đặt Go..."
+brew install go
+echo "Go đã được cài đặt."
+
+# Thiết lập Go environment
+if ! grep -q "export GOPATH=" ~/.zshrc; then
+    echo 'export GOPATH=$HOME/go' >>~/.zshrc
+    echo 'export PATH=$PATH:$GOPATH/bin' >>~/.zshrc
+fi
+
+# Cài đặt Rust
+echo "Đang cài đặt Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+echo "Rust đã được cài đặt."
+
+# Load Rust environment
+source "$HOME/.cargo/env"
 
 # Cài đặt bun
 echo "Đang cài đặt bun..."
@@ -92,10 +115,16 @@ echo "Phiên bản bun:"
 bun --version
 echo "Phiên bản NestJS CLI:"
 nest --version
+echo "Phiên bản Java:"
+java -version
 echo "Phiên bản maven:"
 mvn -version
+echo "Phiên bản Go:"
+go version
+echo "Phiên bản Rust:"
+rustc --version
+echo "Phiên bản Cargo:"
+cargo --version
 
 echo "Cài đặt hoàn tất!"
 echo "Vui lòng khởi động lại terminal hoặc chạy 'source ~/.zshrc' để áp dụng các thay đổi."
-
-echo "Lưu ý: Đừng quên cài đặt thêm ThinkBuddy!"
