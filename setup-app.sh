@@ -10,7 +10,6 @@ install_app() {
 # Cài đặt NVM
 echo "Cài đặt NVM..."
 brew install nvm
-echo "NVM đã được cài đặt."
 
 # Thiết lập NVM
 mkdir -p ~/.nvm
@@ -54,6 +53,10 @@ install_app openvpn-connect
 echo "Đang cài đặt Protocol Buffers..."
 brew install protobuf
 echo "Protocol Buffers đã được cài đặt."
+
+echo "Cài đặt music-presence..."
+brew install music-presence
+echo "music-presence đã được cài đặt."
 
 # Kiểm tra phiên bản protoc
 echo "Phiên bản Protocol Buffers:"
