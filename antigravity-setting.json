@@ -1,0 +1,92 @@
+{
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+
+  "workbench.iconTheme": "flow-dark",
+  "workbench.productIconTheme": "fluent-icons",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "explorer.compactFolders": false,
+  "editor.cursorBlinking": "phase",
+  "diffEditor.wordWrap": "on",
+  "notebook.output.wordWrap": true,
+  "editor.tabSize": 4,
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.foldingImportsByDefault": true,
+  "editor.minimap.enabled": false,
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint",
+    "source.formatDocument"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss"
+  },
+  "git.autofetch": true,
+  "custom-ui-style.external.imports": [
+    // assume the script is ESM format
+    "file:///Users/syuro/Documents/vscode/antigravity.css"
+  ],
+  "workbench.colorTheme": "Xcode Classic Dark",
+  "workbench.colorCustomizations": {
+    "activityBarBadge.foreground": "#ffffffbf",
+    "activityBarBadge.background": "#3c3c3ca3",
+    "editor.background": "#1c1c1c",
+    "editor.lineHighlightBackground": "#26282d",
+    "editor.lineHighlightBorder": "#00000000",
+    "editorBracketMatch.background": "#43454a",
+    "editorBracketMatch.border": "#00000000",
+    "editorGroupHeader.tabsBackground": "#2B2D30",
+    "editorGutter.background": "#00000000",
+    "editorStickyScroll.border": "#393939",
+    "editorStickyScroll.shadow": "#00000078",
+    "editorWidget.background": "#2B2D30",
+    "focusBorder": "#00000000",
+    "panel.background": "#2B2D30",
+    "scrollbar.shadow": "#00000072",
+    "scrollbarSlider.background": "#ffffff12",
+    "sideBar.background": "#2B2D30",
+    "sideBarSectionHeader.border": "#00000000",
+    "statusBar.background": "#2B2D30",
+    "statusBar.debuggingBackground": "#2B2D30",
+    "statusBar.foreground": "#757575",
+    "panel.border": "#00000000",
+    "sideBar.border": "#00000000",
+    "statusBar.noFolderBackground": "#2B2D30",
+    "gitDecoration.modifiedResourceForeground": "#74aeec",
+    "gitDecoration.stageModifiedResourceForeground": "#74aeec",
+    "gitDecoration.addedResourceForeground": "#7fd27fd9",
+    "gitDecoration.renamedResourceForeground": "#74aeec",
+    "gitDecoration.untrackedResourceForeground": "#f7aeae",
+    "gitDecoration.ignoredResourceForeground": "#ffffff3b",
+    "statusBarItem.remoteBackground": "#2B2D30",
+    "statusBarItem.remoteForeground": "#757575",
+    "tab.activeBorderTop": "#0095ff",
+    "tab.border": "#2B2D30",
+    "tab.inactiveBackground": "#2B2D30",
+    "terminal.background": "#1E1F22",
+    "terminal.border": "#2B2D30",
+    "titleBar.activeBackground": "#2B2D30",
+    "titleBar.inactiveBackground": "#2B2D30"
+  },
+  "claudeCode.useTerminal": true,
+  "claudeCode.preferredLocation": "panel",
+  "editor.codeActions.triggerOnFocusChange": true,
+  "sonarlint.automaticAnalysis": true,
+  "sonarlint.focusOnNewCode": false,
+  "workbench.editorAssociations": {
+    "*.svg": "imagePreview.previewEditor"
+  },
+  "json.schemaDownload.enable": true,
+  "sonarlint.rules": {
+    "typescript:S6479": {
+      "level": "off"
+    }
+  },
+  "makefile.configureOnOpen": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}

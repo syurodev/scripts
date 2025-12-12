@@ -32,7 +32,6 @@ echo "Cài đặt các ứng dụng bổ sung..."
 
 install_app thebrowsercompany-dia
 install_app font-jetbrains-mono
-install_app postman
 install_app spotify
 install_app discord
 install_app zalo
@@ -48,19 +47,24 @@ install_app visual-studio-code
 install_app zed
 install_app yaak
 install_app openvpn-connect
+install_app antigravity
+install_app datagrip
+install_app intellij-idea
 
 # Cài đặt Protocol Buffers
 echo "Đang cài đặt Protocol Buffers..."
 brew install protobuf
 echo "Protocol Buffers đã được cài đặt."
 
-echo "Cài đặt music-presence..."
-brew install music-presence
-echo "music-presence đã được cài đặt."
-
 # Kiểm tra phiên bản protoc
 echo "Phiên bản Protocol Buffers:"
 protoc --version
+
+
+echo "Đang cài đặt tree..."
+brew install tree
+echo "tree đã được cài đặt."
+
 
 # Cài đặt Java 8 (Azul Zulu - native ARM64 cho Apple Silicon)
 echo "Đang cài đặt Java 8 (Azul Zulu)..."
